@@ -39,13 +39,21 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: _backgroundColor,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Spacer(flex: 3),
  
             // Logo image (already includes the question marks + Flutter arrow).
-            Image.asset(
-              'assets/logo.png',
-              width: 220,
+            // The source PNG has slightly uneven transparent padding around
+            // the glyph (more empty space on the right than the left, and
+            // more on top than the bottom), so a small translate nudges the
+            // visible artwork back to true center without editing the file.
+            Transform.translate(
+              offset: const Offset(2.5, -4.5),
+              child: Image.asset(
+                'assets/logo.png',
+                width: 220,
+              ),
             ),
  
             const Spacer(flex: 1),

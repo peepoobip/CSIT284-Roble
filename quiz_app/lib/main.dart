@@ -16,3 +16,4 @@ class QuizApp extends StatelessWidget {
       home: const HomeScreen(),
     );
   }
+}
