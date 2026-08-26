@@ -8,16 +8,15 @@ class HomeScreen extends StatefulWidget {
 }
  
 class _HomeScreenState extends State<HomeScreen> {
-  // Background stays fixed — reddish-black.
+  
   static const Color _backgroundColor = Color(0xFF1A0000);
  
-  // Text color cycled on each "Start Quiz" press. Max 5 colors.
   static const List<Color> _textColors = [
     Colors.white,
-    Color(0xFFE94560), // red-pink
-    Color(0xFFFFD93D), // yellow
-    Color(0xFF16A085), // teal green
-    Color(0xFFF39C12), // amber/orange
+    Color(0xFFE94560), 
+    Color(0xFFFFD93D), 
+    Color(0xFF16A085), 
+    Color(0xFFF39C12), 
   ];
  
   int _textColorIndex = 0;
@@ -27,8 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _textColorIndex = (_textColorIndex + 1) % _textColors.length;
     });
  
-    // Hook your actual quiz navigation here, e.g.:
-    // Navigator.push(context, MaterialPageRoute(builder: (_) => const QuizScreen()));
+    
   }
  
   @override
@@ -43,11 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             const Spacer(flex: 3),
  
-            // Logo image (already includes the question marks + Flutter arrow).
-            // The source PNG has slightly uneven transparent padding around
-            // the glyph (more empty space on the right than the left, and
-            // more on top than the bottom), so a small translate nudges the
-            // visible artwork back to true center without editing the file.
+          
             Transform.translate(
               offset: const Offset(2.5, -4.5),
               child: Image.asset(
@@ -58,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
  
             const Spacer(flex: 1),
  
-            // Tagline — color cycles on each "Start Quiz" press.
+           
             Text(
               'Learn Flutter the fun way!',
               style: TextStyle(
